@@ -1,0 +1,13 @@
+<div class="row">
+  <button mat-raised-button color="primary" (click)="salesService.getPromoCode()">Получить промокод</button>
+</div>
+<div class="row">
+  <mat-form-field class="example-form-field mr-1" appearance="fill">
+    <mat-label>Промокод</mat-label>
+    <input matInput type="text" autocomplete="off" [(ngModel)]="promoCode">
+    <button *ngIf="promoCode" matSuffix mat-icon-button aria-label="Clear" (click)="promoCode=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>  
+  <button mat-raised-button color="primary">Ввести промокод</button>
+</div>
