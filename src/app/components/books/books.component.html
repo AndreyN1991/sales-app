@@ -1,0 +1,17 @@
+<div *ngFor="let bookItem of dataSource" class="card-container">
+<mat-card class="example-card card-item">
+    <mat-card-header>
+      <mat-card-title>{{bookItem.title}}</mat-card-title>
+      <mat-card-subtitle>{{bookItem.author}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="data:image/jpeg;base64,{{bookItem.picture}}" alt="{{bookItem.title}}">
+    <mat-card-content>
+      <p>Цена: {{bookItem.cost}} руб</p>
+      <p>Кол: {{bookItem.bookCount}}</p>
+      <small>{{bookItem.isbn}}</small>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Купить</button>
+    </mat-card-actions>
+</mat-card>
+</div>

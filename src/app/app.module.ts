@@ -8,11 +8,17 @@ import { MaterialModule } from './modules/material/material.module';
 import { AuthComponent } from './components/auth/auth.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SalesComponent } from './components/sales/sales.component';
+import { BooksComponent } from './components/books/books.component';
+import { BasketComponent } from './components/basket/basket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    AuthComponent,
+    SalesComponent,
+    BooksComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
