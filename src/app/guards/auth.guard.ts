@@ -11,8 +11,10 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(): boolean {
-    if (this.salesService.promoCode.Id === 0)
-      this.router.navigate(['']);
+    this.salesService.promoCode.subscribe(x => {
+      if (x.id === 0)
+        this.router.navigate(['']);
+    })
 
     return true;
   }

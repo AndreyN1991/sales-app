@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <span>Сейлы</span>
   <div class="spacer"></div>
-  <span>{{code}}</span>
+  <span>{{ (salesService.promoCode | async)?.code }}</span>
 </mat-toolbar>
 <router-outlet></router-outlet>

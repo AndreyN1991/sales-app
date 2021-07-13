@@ -1,5 +1,5 @@
 export interface PromoCode {
-  Id: number;
-  Code: string;
-  Status: string;
+  id: number;
+  code: string;
+  status: string;
 }

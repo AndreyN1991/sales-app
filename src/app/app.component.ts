@@ -7,9 +7,8 @@ import { SalesService } from './services/sales.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  code: string = '';
 
-  constructor(private salesService: SalesService) {
-    this.salesService.code.subscribe(x => this.code = x);
+  constructor(public salesService: SalesService) {
+    
   }
 }
