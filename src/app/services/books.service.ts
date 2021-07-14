@@ -22,6 +22,7 @@ export class BooksService {
 
   getBooks(code: string) {
     this.basket = this.http.get<Basket[]>(`${this.apiUrl}Books/${code}`);
+    this.calcBasketSum();
   }
 
   calcBasketSum() {
@@ -37,7 +38,6 @@ export class BooksService {
         }).subscribe(() => {
           this.getBooksAll();
           this.getBooks(x.code);
-          this.calcBasketSum();
         }));
       }
     });
@@ -47,7 +47,6 @@ export class BooksService {
     this.salesService.promoCode.subscribe(x => this.http.delete<any>(`${this.apiUrl}Books/${id}`).subscribe(() => {
       this.getBooksAll();
       this.getBooks(x.code);
-      this.calcBasketSum();
     }));
   }
 }

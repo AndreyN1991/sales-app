@@ -2,9 +2,8 @@
   <span>Сейлы</span>
   <div class="spacer"></div>
   <div *ngIf="booksService.basketSum | async as sum">
-    <button *ngIf="sum > 2000" mat-raised-button [routerLink]="['/checkout']" (click)="salesService.checkout()">Оформить заказ</button>
-  </div>  
-  <button *ngIf="((booksService.basketSum | async) == null ? 0 : 1) > 2000" mat-raised-button>Оформить заказ</button>
+    <button *ngIf="sum > 2000" mat-raised-button [routerLink]="['/checkout']" (click)="salesService.checkout()" class="mr-1">Оформить заказ</button>
+  </div>
   <span>{{ (salesService.promoCode | async)?.code }}</span>
   <a *ngIf="(salesService.promoCode | async)?.code !== ''"
     mat-mini-fab
@@ -12,6 +11,7 @@
     class="float-right"
     aria-label="Удалить"
     (click)="deleteCookie()"
+    class="ml-1"
   >
     <mat-icon>close</mat-icon>
   </a>
