@@ -1,6 +1,19 @@
 <mat-toolbar color="primary">
   <span>Сейлы</span>
   <div class="spacer"></div>
+  <div *ngIf="booksService.basketSum | async as sum">
+    <button *ngIf="sum > 2000" mat-raised-button [routerLink]="['/checkout']" (click)="salesService.checkout()">Оформить заказ</button>
+  </div>  
+  <button *ngIf="((booksService.basketSum | async) == null ? 0 : 1) > 2000" mat-raised-button>Оформить заказ</button>
   <span>{{ (salesService.promoCode | async)?.code }}</span>
+  <a *ngIf="(salesService.promoCode | async)?.code !== ''"
+    mat-mini-fab
+    color="accent"
+    class="float-right"
+    aria-label="Удалить"
+    (click)="deleteCookie()"
+  >
+    <mat-icon>close</mat-icon>
+  </a>
 </mat-toolbar>
 <router-outlet></router-outlet>

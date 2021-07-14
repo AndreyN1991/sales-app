@@ -1,0 +1,7 @@
+<a *ngIf="(salesService.promoCode | async)?.status === 'Одобрен'; else elseBlock"
+   mat-button 
+   color="primary" 
+   href="{{(salesService.promoCode | async)?.url}}"
+   >Перейти на Read&Buy</a>
+
+<ng-template #elseBlock><button mat-button color="primary">Ожидайте обработку заказа</button></ng-template>

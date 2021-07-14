@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivate, Router } from '@angular/router';
 import { SalesService } from '../services/sales.service';
 
 @Injectable({
@@ -14,6 +13,8 @@ export class AuthGuard implements CanActivate {
     this.salesService.promoCode.subscribe(x => {
       if (x.id === 0)
         this.router.navigate(['']);
+      else if (x.status === 'Заказ' || x.status === 'Одобрен')
+        this.router.navigate(['/checkout']);
     })
 
     return true;

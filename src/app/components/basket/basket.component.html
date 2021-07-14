@@ -23,8 +23,9 @@
           color="accent"
           class="float-right"
           aria-label="Удалить"
+          (click)="booksService.deleteBook(element.promoCodeBookId)"
         >
-          <mat-icon id="{{ element.id }}">delete</mat-icon>
+          <mat-icon id="{{ element.promoCodeBookId }}">delete</mat-icon>
         </a>
       </td>
     </ng-container>

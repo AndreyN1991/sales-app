@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SalesComponent } from './components/sales/sales.component';
 import { BooksComponent } from './components/books/books.component';
 import { BasketComponent } from './components/basket/basket.component';
+import { CookieService } from 'ngx-cookie-service';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { BasketComponent } from './components/basket/basket.component';
     AuthComponent,
     SalesComponent,
     BooksComponent,
-    BasketComponent
+    BasketComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { BasketComponent } from './components/basket/basket.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
